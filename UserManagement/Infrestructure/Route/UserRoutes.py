@@ -6,6 +6,7 @@ from UserManagement.Infrestructure.Controller.ActivateUserController import Acti
 from UserManagement.Application.UseCase.ActivateUserUseCase import ActivateUserUseCase
 #from UserManagement.Infrestructure.Repository.UserMongoDBRepository import UserMongoDBRepository
 from UserManagement.Infrestructure.Repository.Models.UserMySQLModel import User
+#from UserManagement.Infrestructure.Repository.Models.UserMongoDBModel import User
 
 
 user_blueprint = Blueprint('users', __name__)
