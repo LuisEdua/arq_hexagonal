@@ -5,7 +5,7 @@ from sqlalchemy import Column, String, DateTime
 
 Base = declarative_base()
 
-DATABASE_URI = 'mysql+mysqlconnector://root:RcBaR_-315@localhost/BDAH'
+DATABASE_URI = 'mysql+mysqlconnector://user:password@host/bd'
 
 engine = create_engine(DATABASE_URI)
 Base.metadata.create_all(bind=engine)

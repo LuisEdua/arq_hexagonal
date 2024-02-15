@@ -15,14 +15,14 @@ class TestUserRoutes(TestCase):
             response = self.client.post('/api/v1/users/', json={
                 "name": "Test",
                 "last_name": "User",
-                "cellphone": "1234567880",
-                "email": "gamerfigh@gmail.com",
+                "cellphone": "1234567890",
+                "email": "test@example.com",
                 "password": "password"
             })
             self.assertEqual(response.status_code, 201)
             data = response.get_json()
             self.assertEqual(data['name'], "Test")
-            self.assertEqual(data['last_name'], "User")
+            self.assertEqual(data['lastname'], "User")
             self.assertEqual(data['cellphone'], "1234567890")
             self.assertEqual(data['email'], "test@example.com")
 
