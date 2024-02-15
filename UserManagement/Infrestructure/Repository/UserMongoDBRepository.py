@@ -1,8 +1,11 @@
 from datetime import datetime
 from UserManagement.Domain.Entity.User import User
 from UserManagement.Infrestructure.Repository.Models.UserMongoDBModel import UserMongoModel
+from UserManagement.Domain.Port.UserPort import UserPort
+from typing import Any
 
-class UserMongoRepository:
+
+class UserMongoRepository(UserPort):
     def __init__(self):
         self.user_model = UserMongoModel()
 
