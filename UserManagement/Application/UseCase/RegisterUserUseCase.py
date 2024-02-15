@@ -1,14 +1,14 @@
 from UserManagement.Domain.Entity.User import User
 from UserManagement.Domain.Port.UserPort import UserPort
-from typing import Union, Any
+from typing import Union
 
 class RegisterUserUseCase:
 
     def __init__(self, repository: UserPort):
         self.repository = repository
 
-    async def run(self, name, lastname, cellphone, email, password) -> Union[User, Any]:
+    def run(self, name, lastname, cellphone, email, password) -> Union[User, None]:
         try:
-            return await self.repository.register(name, lastname, cellphone, email, password)
+            return self.repository.register(name, lastname, cellphone, email, password)
         except Exception:
-            pass
+            return None

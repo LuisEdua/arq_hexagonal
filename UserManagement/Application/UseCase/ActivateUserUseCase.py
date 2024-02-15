@@ -1,6 +1,7 @@
 from typing import Union
-from UserManagement.Domain.Entity.User import User
+from UserManagement.Infrestructure.Repository.Models.UserMySQLModel import User
 from UserManagement.Domain.Port.UserPort import UserPort
+from typing import Union
 
 class ActivateUserUseCase:
     def __init__(self, repository: UserPort):
@@ -8,6 +9,8 @@ class ActivateUserUseCase:
 
     def run(self, token: str) -> Union[User, None]:
         try:
-            return self.repository.search_user_by_token(token)
+            user = self.repository.search_user_by_token(token)
+            new = self.repository.update_verified_at(user.uuid)
+            return new
         except Exception as e:
-            pass
+            return None

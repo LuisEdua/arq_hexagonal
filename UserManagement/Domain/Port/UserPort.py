@@ -6,7 +6,7 @@ from abc import ABC, abstractmethod
 
 class UserPort(ABC):
     @abstractmethod
-    def update_verified_at(self, user: User) -> Any: pass
+    def update_verified_at(self, user_id: str) -> Any: pass
 
     @abstractmethod
     def register(self, name: str, lastname: str, cellphone: str, email: str, password: str) -> Any: pass
